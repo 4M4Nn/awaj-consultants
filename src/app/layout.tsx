@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { IntroSequence } from "@/components/intro/IntroSequence";
 import { siteConfig, seoKeywords } from "@/lib/data";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <IntroSequence />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

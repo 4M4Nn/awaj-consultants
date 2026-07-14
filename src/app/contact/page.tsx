@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { Reveal } from "@/components/motion/Reveal";
 import { contactDetails, siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -19,19 +20,21 @@ const iconMap: Record<string, typeof MapPin> = {
 export default function ContactPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <p className="text-xs font-semibold uppercase tracking-widest text-accent">
-        Contact
-      </p>
-      <h1 className="font-heading mt-2 max-w-2xl text-4xl font-bold text-primary sm:text-5xl">
-        Let&apos;s talk about your project
-      </h1>
-      <p className="mt-6 max-w-2xl text-muted-foreground">
-        Reach {siteConfig.fullName} at our Dubai office, or send us your
-        project brief below and our team will follow up.
-      </p>
+      <Reveal>
+        <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+          Contact
+        </p>
+        <h1 className="font-heading mt-2 max-w-2xl text-4xl font-bold text-primary sm:text-5xl">
+          Let&apos;s talk about your project
+        </h1>
+        <p className="mt-6 max-w-2xl text-muted-foreground">
+          Reach {siteConfig.fullName} at our Dubai office, or send us your
+          project brief below and our team will follow up.
+        </p>
+      </Reveal>
 
       <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-5">
-        <div className="lg:col-span-2">
+        <Reveal className="lg:col-span-2">
           <ul className="space-y-6">
             {contactDetails.map((detail) => {
               const Icon = iconMap[detail.label] ?? MapPin;
@@ -59,13 +62,13 @@ export default function ContactPage() {
               );
             })}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="lg:col-span-3">
+        <Reveal delay={0.1} className="lg:col-span-3">
           <div className="rounded-lg border border-border bg-card p-6 sm:p-8">
             <ContactForm />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
