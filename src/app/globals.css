@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f4ee;
+  --foreground: #171b21;
+  --card: #ffffff;
+  --card-foreground: #171b21;
+  --popover: #ffffff;
+  --popover-foreground: #171b21;
+  --primary: #14181f;
+  --primary-foreground: #f7f4ee;
+  --secondary: #ece6d8;
+  --secondary-foreground: #171b21;
+  --muted: #ece6d8;
+  --muted-foreground: #5b5f6a;
+  --accent: #b8935a;
+  --accent-foreground: #171b21;
+  --destructive: #b3403a;
+  --destructive-foreground: #ffffff;
+  --border: #dfd9c8;
+  --input: #dfd9c8;
+  --ring: #b8935a;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(184, 147, 90, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(184, 147, 90, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
